@@ -1,0 +1,25 @@
+epochs
+ 100
+ batch_size
+ 60
+ num_conv_filt1
+ 32
+ kernel_size1
+ 5
+ num_strides1
+ 1
+ activation
+ relu
+ num_conv_filt2
+ 32
+ kernel_size2
+ 5
+ num_strides2
+ 1
+ dense1
+ 128
+ dropout1
+ 0.5
+ dropout2
+ 0
+
