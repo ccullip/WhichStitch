@@ -34,8 +34,8 @@ def api():
         #response = jsonify(output_data)
         return json.dumps({'status':'OK?'})
     except Exception as e:
-        print(repr(e))
-        return json.dumps({'status':'OK!', 'exception':e})
+        str = repr(e)
+        return json.dumps({'status':'OK!', 'exception': str})
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port='5000', debug=True)
