@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 from serve import get_model_api
 
@@ -8,8 +8,8 @@ model_api = get_model_api()
 
 # default route
 @app.route('/')
-def index():
-    return "Hello"
+def main():
+    return render_template('simple_client.html')
 
 # HTTP Errors handlers
 @app.errorhandler(404)
