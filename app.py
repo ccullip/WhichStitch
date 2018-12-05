@@ -26,7 +26,7 @@ def server_error(e):
     """.format(e), 500
 
 # API route
-@app.route('/api', methods=['GET', 'POST'])
+@app.route('/api', methods=['POST'])
 def api():
     input_data = request.json
     output_data = model_api(input_data)
