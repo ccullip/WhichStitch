@@ -15,9 +15,10 @@
     <br>
 <script type="text/javascript">
     function api_call() {
-        input = document.getElementById('output')
-        console.log("starting call")
-        var formData = new FormData(input)
+        input = document.getElementById('output');
+        console.log("starting call");
+        var formData = new FormData();
+        formData.append("image", input);
         $.ajax({
             url: 'https://whichstitch.herokuapp.com/api',
             method: 'POST',
