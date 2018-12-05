@@ -5,9 +5,8 @@
     <title>Title</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
-
-    <input type="text" id="input" name="input" placeholder="Please upload a picture"/>
-    <button id="btn">Call API</button>
+    <input type="file" name=image accept="image/*" capture="environment">
+    <button id="btn" style="visibility: hidden">Predict Stitch</button>
     <div id="api_output"></div>
 
 </html>
