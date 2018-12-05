@@ -6,7 +6,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
-<form class="submit-photo" action="https://whichstitch.herokuapp.com/api" method="POST" role="form" enctype="multipart/form-data">
+<form class="submit-photo" action="https://whichstitch.herokuapp.com/api" method="POST" role="form">
         <input id="imageFile" type="file"><input type="button" value="Resize Image" onclick="ResizeImage()"/>
         <img src="" id="output" name="output">
         <button id="predictbtn" onclick="api_call()">Predict</button>
