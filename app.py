@@ -9,7 +9,7 @@ model_api = get_model_api()
 # default route
 @app.route('/')
 def index():
-    return "Index API"
+    return "Hello"
 
 # HTTP Errors handlers
 @app.errorhandler(404)
@@ -26,7 +26,7 @@ def server_error(e):
     """.format(e), 500
 
 # API route
-@app.route('/api', methods=['POST'])
+@app.route('/api', methods=['GET', 'POST'])
 def api():
     input_data = request.json
     output_data = model_api(input_data)
