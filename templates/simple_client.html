@@ -27,7 +27,7 @@
         });
     }
 </script>
-    <input type="file" value="Take Photo" name=image accept="image/*" capture="environment">
+    <input type="file" value="Take Photo" id="image" name=image accept="image/*" capture="environment">
     <input type="button" id="predictbtn" value="Predict stitch" style="visibility: hidden">
     <br>
     <canvas id="canvas"></canvas>
@@ -36,23 +36,18 @@
     var input = document.querySelector('input[type=file]');
 
     input.onchange = function () {
-      var file = input.files[0];
-
-      upload(file);
-      drawOnCanvas(file); // see Example 7
-      predictbtn = document.getElementById('predictbtn')
-      predictbtn.style.visibility = "visible"
-      predictbtn.onclick = function () { api_call(file); };
+        var file = input.files[0];
+        img = document.getElementById('image')
+        console.log(img.style.height)
+        console.log(img.style)
+        img.style.height = '100px'
+        img.style.width = '100px'
+        //drawOnCanvas(img);
+        console.log(img.style.height)
+        predictbtn = document.getElementById('predictbtn')
+        predictbtn.style.visibility = "visible"
+        predictbtn.onclick = function () { api_call(img); };
     };
-
-    function upload(file) {
-      var form = new FormData(),
-          xhr = new XMLHttpRequest();
-
-      // form.append('image', file);
-      // xhr.open('post', 'server.php', true);
-      // xhr.send(form);
-    }
 
     function drawOnCanvas(file) {
         var reader = new FileReader();
@@ -72,7 +67,7 @@
             img.src = dataURL;
         };
 
-        reader.readAsDataURL(file);
+        //reader.readAsDataURL(file);
     }
 </script>
 </html>
