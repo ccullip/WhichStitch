@@ -12,7 +12,7 @@
         $.ajax({
             url: "https://whichstitch.herokuapp.com/api",
             method: 'POST',
-            contentType: 'False',
+            contentType: false,
             data: formData,
             success: function( data, textStatus, jQxhr ){
                 $('#api_output').html( data.output );
