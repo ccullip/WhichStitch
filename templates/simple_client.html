@@ -29,7 +29,7 @@
     function api_call(input) {
         console.log("starting call")
         $.ajax({
-            url: $(this).attr('action'),
+            url: 'https://whichstitch.herokuapp.com/api',
             type: 'POST',
             method: 'POST',
             contentType: false,
