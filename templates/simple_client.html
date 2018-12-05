@@ -7,14 +7,15 @@
 </head>
 <script type="text/javascript">
     function api_call(input) {
-        var formData = new FormData()
-        formData.append('image', input)
+        var formData = new FormData(input)
+        console.log("appended")
         $.ajax({
             url: "https://whichstitch.herokuapp.com/api",
             method: 'POST',
             contentType: false,
             processData: false,
             data: formData,
+            cache: false,
             success: function( data){
                 console.log("success!")
             },
