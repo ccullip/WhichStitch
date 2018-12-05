@@ -7,34 +7,24 @@
 </head>
 
 <form class="submit-photo" action="https://whichstitch.herokuapp.com/api" method="POST" role="form">
-        <input type="file" value="Take Photo" id="image" name="image" accept="image/*" capture="environment">
+        <input id="imageFile" type="file"><input type="button" value="Resize Image" onclick="ResizeImage()"/>
+        <img src="" id="output">
+        <button id="predictbtn" onclick="api_call()">Predict</button>
 </form>
 
-    <input type="button" id="predictbtn" value="Predict stitch" style="visibility: hidden">
     <br>
-    <canvas id="canvas"></canvas>
-    <div id="api_output"></div>
 <script type="text/javascript">
-    var input = document.querySelector('input[type=file]');
-
-    input.onchange = function () {
-        var file = input.files[0];
-        predictbtn = document.getElementById('predictbtn')
-        predictbtn.style.visibility = "visible"
-        predictbtn.onclick = function () { api_call(file); };
-    };
-
-</script>
-<script type="text/javascript">
-    function api_call(input) {
+    function api_call() {
+        input = document.getElementById('output')
         console.log("starting call")
+        var formData = new FormData(input)
         $.ajax({
             url: 'https://whichstitch.herokuapp.com/api',
-            type: 'POST',
             method: 'POST',
             contentType: false,
             processData: false,
-            data: new FormData($('form')[0]),
+            data: formData, // new FormData($('form')[0]),
+            dataType: 'json',
             cache: false,
             async: false,
             success: function( response ){
@@ -48,5 +38,53 @@
             timeout: 120000
         });
     }
+    function ResizeImage() {
+        var filesToUpload = document.getElementById('imageFile').files;
+        var file = filesToUpload[0];
+
+        // Create an image
+        var img = document.createElement("img");
+        // Create a file reader
+        var reader = new FileReader();
+        // Set the image once loaded into file reader
+        reader.onload = function(e) {
+            img.src = e.target.result;
+
+            var canvas = document.createElement("canvas");
+            var ctx = canvas.getContext("2d");
+            ctx.drawImage(img, 0, 0);
+
+            var MAX_WIDTH = 100;
+            var MAX_HEIGHT = 100;
+            var width = img.width;
+            var height = img.height;
+
+            if (width > height) {
+                if (width > MAX_WIDTH) {
+                    height *= MAX_WIDTH / width;
+                    width = MAX_WIDTH;
+                }
+            } else {
+                if (height > MAX_HEIGHT) {
+                    width *= MAX_HEIGHT / height;
+                    height = MAX_HEIGHT;
+                }
+            }
+            canvas.width = width;
+            canvas.height = height;
+            ctx.drawImage(img, 0, 0, width, height);
+
+            var dataurl = canvas.toDataURL("image/jpg");
+            outputimg = document.getElementById('output');
+            outputimg.src = dataurl;
+
+        }
+        // Load files into file reader
+        reader.readAsDataURL(file);
+    };
+
+</script>
+<script type="text/javascript">
+
 </script>
 </html>

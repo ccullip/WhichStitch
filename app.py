@@ -28,10 +28,10 @@ def server_error(e):
 # API route
 @app.route('/api', methods=['POST'])
 def api():
-    #input_data = request.form['image']
+    input_data = request.form['image']
     #output_data = model_api(input_data)
     #response = jsonify(output_data)
-    return json.dumps({'status':'OK'})
+    return json.dumps({'status':'OK!'})
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port='5000', debug=True)
