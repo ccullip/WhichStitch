@@ -5,24 +5,8 @@
     <title>Which Stitch?</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
-<script type="text/javascript">
-    $(function() {
-        $('button').click(function() {
-            $.ajax({
-                url: "https://whichstitch.herokuapp.com/api",
-                data: $('form').serialize(),
-                type: 'POST',
-                success: function(response) {
-                    console.log(response);
-                },
-                error: function(error) {
-                    console.log(error);
-                }
-            });
-        });
-    });
-</script>
-<form class="submit-photo" action="/api" method="post" role="form">
+
+<form class="submit-photo" action="https://whichstitch.herokuapp.com/api" method="POST" role="form">
         <input type="file" value="Take Photo" id="image" name="image" accept="image/*" capture="environment">
 </form>
 
@@ -32,10 +16,39 @@
     <div id="api_output"></div>
 <script type="text/javascript">
     var input = document.querySelector('input[type=file]');
+    var form = document.querySelector(".submit-photo")
 
     input.onchange = function () {
+        var file = input.files[0];
         predictbtn = document.getElementById('predictbtn')
         predictbtn.style.visibility = "visible"
+        predictbtn.onclick = function () { api_call(file); };
     };
+    }
+</script>
+<script type="text/javascript">
+    function api_call(input) {
+        var formData = new FormData(input)
+        console.log("appended")
+        $.ajax({
+            url: $(this).attr('action'),
+            method: 'POST',
+            type: 'POST',
+            contentType: false,
+            processData: false,
+            data: new FormData($('form')[0]),
+            cache: false,
+            async: false,
+            success: function( response ){
+                console.log(response);
+                console.log("success!");
+            },
+            error: function( error ){
+                // $('#api_output').html( "There was an error" );
+                console.log( error );
+            },
+            timeout: 120000
+        });
+    }
 </script>
 </html>
