@@ -29,8 +29,9 @@ def server_error(e):
 @app.route('/api', methods=['POST'])
 def api():
     print("api function")
-    input_data = request.json
+    input_data = request.files
     output_data = model_api(input_data)
+    print(output_data)
     response = jsonify(output_data)
     return response
 

@@ -15,9 +15,8 @@
             contentType: false,
             processData: false,
             data: formData,
-            success: function( data, textStatus, jQxhr ){
-                $('#api_output').html( data.output );
-                $("#input").val("");
+            success: function( data){
+                console.log("success!")
             },
             error: function( jqXhr, textStatus, errorThrown ){
                 $('#api_output').html( "There was an error" );
