@@ -16,7 +16,6 @@
     <div id="api_output"></div>
 <script type="text/javascript">
     var input = document.querySelector('input[type=file]');
-    var form = document.querySelector(".submit-photo")
 
     input.onchange = function () {
         var file = input.files[0];
@@ -24,15 +23,15 @@
         predictbtn.style.visibility = "visible"
         predictbtn.onclick = function () { api_call(file); };
     };
+
 </script>
 <script type="text/javascript">
     function api_call(input) {
-        var formData = new FormData(input)
-        console.log("appended")
+        console.log("starting call")
         $.ajax({
             url: $(this).attr('action'),
-            method: 'POST',
             type: 'POST',
+            method: 'POST',
             contentType: false,
             processData: false,
             data: new FormData($('form')[0]),
