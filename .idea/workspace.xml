@@ -8,7 +8,6 @@
       <change beforePath="$PROJECT_DIR$/../CMS/Sea Turtle Stuffed Animal.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../CMS/Sea Turtle Stuffed Animal.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Iris-Classification-with-Heroku" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../WhichStitch" beforeDir="false" afterPath="$PROJECT_DIR$/../WhichStitch" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/simple_client.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/simple_client.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../app" beforeDir="false" />
     </list>
@@ -42,13 +41,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="1318" />
+          <entry key="html" value="1962" />
           <entry key="py" value="179" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="1318" />
+          <entry key="HTML" value="1962" />
           <entry key="Python" value="179" />
         </counts>
       </usages-collector>
@@ -92,10 +91,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/simple_client.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="7" column="71" selection-start-line="7" selection-start-column="71" selection-end-line="7" selection-end-column="71" />
+            <state relative-caret-position="459">
+              <caret line="39" column="59" selection-start-line="39" selection-start-column="59" selection-end-line="39" selection-end-column="59" />
               <folding>
-                <element signature="n#style#0;n#button#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#1;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -240,7 +239,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.4837341" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.4837341" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -355,10 +354,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/simple_client.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="7" column="71" selection-start-line="7" selection-start-column="71" selection-end-line="7" selection-end-column="71" />
+        <state relative-caret-position="459">
+          <caret line="39" column="59" selection-start-line="39" selection-start-column="59" selection-end-line="39" selection-end-column="59" />
           <folding>
-            <element signature="n#style#0;n#button#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#1;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
