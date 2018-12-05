@@ -13,7 +13,7 @@ def get_model_api():
         # 2. process input by resizing to 100 x 100 pixels
         width = 100
         height = 100
-        input_img = input_img.resize((width, height), Image.ANTIALIAS)
+        #input_img = input_img.resize((width, height), Image.ANTIALIAS)
         # 3. call model predict function
         img = np.array(input_img)
         preds = model.predict(img)

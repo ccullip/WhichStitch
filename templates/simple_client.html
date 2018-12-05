@@ -6,29 +6,26 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <script type="text/javascript">
-    function api_call(input) {
-        var formData = new FormData(input)
-        console.log("appended")
-        $.ajax({
-            url: "https://whichstitch.herokuapp.com/api",
-            method: 'POST',
-            contentType: false,
-            processData: false,
-            data: formData,
-            cache: false,
-            async: false,
-            success: function( data){
-                console.log("success!")
-            },
-            error: function( jqXhr, textStatus, errorThrown ){
-                $('#api_output').html( "There was an error" );
-                console.log( errorThrown );
-            },
-            timeout: 120000
+    $(function() {
+        $('button').click(function() {
+            $.ajax({
+                url: "https://whichstitch.herokuapp.com/api",
+                data: $('form').serialize(),
+                type: 'POST',
+                success: function(response) {
+                    console.log(response);
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
         });
-    }
+    });
 </script>
-    <input type="file" value="Take Photo" id="image" name=image accept="image/*" capture="environment">
+<form class="submit-photo" action="/api" method="post" role="form">
+        <input type="file" value="Take Photo" id="image" name="image" accept="image/*" capture="environment">
+</form>
+
     <input type="button" id="predictbtn" value="Predict stitch" style="visibility: hidden">
     <br>
     <canvas id="canvas"></canvas>
@@ -37,38 +34,8 @@
     var input = document.querySelector('input[type=file]');
 
     input.onchange = function () {
-        var file = input.files[0];
-        img = document.getElementById('image')
-        console.log(img.style.height)
-        console.log(img.style)
-        img.style.height = '100px'
-        img.style.width = '100px'
-        //drawOnCanvas(img);
-        console.log(img.style.height)
         predictbtn = document.getElementById('predictbtn')
         predictbtn.style.visibility = "visible"
-        predictbtn.onclick = function () { api_call(img); };
     };
-
-    function drawOnCanvas(file) {
-        var reader = new FileReader();
-
-            reader.onload = function (e) {
-                var dataURL = e.target.result,
-                c = document.querySelector('canvas'), // see Example 4
-                ctx = c.getContext('2d'),
-            img = new Image();
-
-            img.onload = function() {
-                c.width = img.width;
-                c.height = img.height;
-                ctx.drawImage(img, 0, 0);
-            };
-
-            img.src = dataURL;
-        };
-
-        //reader.readAsDataURL(file);
-    }
 </script>
 </html>
