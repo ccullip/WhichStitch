@@ -33,7 +33,7 @@ def api():
     output_data = model_api(input_data)
     print(output_data)
     response = jsonify(output_data)
-    return response
+    return render_template("output.html")
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port='5000', debug=True)
