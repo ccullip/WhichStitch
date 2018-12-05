@@ -31,9 +31,10 @@ def api():
     try:
         input_data = request.form['image']
         output_data = model_api(input_data)
+        response = jsonify(output_data)
+        return json.dumps({'status':'OK?', 'response':response})
     except Exception as e:
         print(repr(e))
-    #response = jsonify(output_data)
     return json.dumps({'status':'OK!'})
 
 if __name__ == '__main__':
