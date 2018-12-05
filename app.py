@@ -30,9 +30,9 @@ def server_error(e):
 def api():
     try:
         input_data = request.form['image']
+        output_data = model_api(input_data)
     except Exception as e:
         print(repr(e))
-    #output_data = model_api(input_data)
     #response = jsonify(output_data)
     return json.dumps({'status':'OK!'})
 
