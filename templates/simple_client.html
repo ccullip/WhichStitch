@@ -29,6 +29,8 @@
 </script>
     <input type="file" value="Take Photo" name=image accept="image/*" capture="environment">
     <input type="button" id="predictbtn" value="Predict stitch" style="visibility: hidden">
+    <br>
+    <canvas id="canvas"></canvas>
     <div id="api_output"></div>
 <script type="text/javascript">
     var input = document.querySelector('input[type=file]');
@@ -37,7 +39,7 @@
       var file = input.files[0];
 
       upload(file);
-      displayAsImage(file); // see Example 7
+      drawOnCanvas(file); // see Example 7
       predictbtn = document.getElementById('predictbtn')
       predictbtn.style.visibility = "visible"
       predictbtn.onclick = function () { api_call(file); };
@@ -52,16 +54,25 @@
       // xhr.send(form);
     }
 
-    function displayAsImage(file) {
-        var imgURL = URL.createObjectURL(file),
-            img = document.createElement('img');
+    function drawOnCanvas(file) {
+        var reader = new FileReader();
 
-        img.onload = function() {
-            URL.revokeObjectURL(imgURL);
+            reader.onload = function (e) {
+                var dataURL = e.target.result,
+                c = document.querySelector('canvas'), // see Example 4
+                ctx = c.getContext('2d'),
+            img = new Image();
+
+            img.onload = function() {
+                c.width = img.width;
+                c.height = img.height;
+                ctx.drawImage(img, 0, 0);
+            };
+
+            img.src = dataURL;
         };
 
-        img.src = imgURL;
-        document.body.appendChild(img);
+        reader.readAsDataURL(file);
     }
 </script>
 </html>
