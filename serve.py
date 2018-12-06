@@ -8,7 +8,7 @@ import base64
 def get_model_api():
     """Returns lambda function for api"""
     # 1. initialize model and reload weights
-    model = KerasModel("model/params.txt", "model/weights.h5")
+    #model = KerasModel("model/params.txt", "model/weights.h5")
 
     def model_api(input_string):
         comma = input_string.find(',')
@@ -42,7 +42,7 @@ def get_model_api():
         # 3. call model predict function
         print('predicting')
         preds = EntireModel("model/model.h5", img)
-        preds = KerasModels("model/params.txt", "model/weights.h5", img)
+        #preds = KerasModels("model/params.txt", "model/weights.h5", img)
         print(preds)
         # 4. process the output
         # 5. return the output for the api
