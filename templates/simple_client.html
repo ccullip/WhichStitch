@@ -4,22 +4,19 @@
     <meta charset="UTF-8">
     <title>Which Stitch?</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-</head>
 
-<form class="submit-photo" action="https://whichstitch.herokuapp.com/api" method="POST" role="form" enctype="multipart/form-data">
-        <input id="imageFile" type="file"><input type="button" value="Resize Image" onclick="ResizeImage()"/>
-        <img src="" id="output" name="output">
-        <button id="predictbtn" onclick="api_call()">Predict</button>
-</form>
-
-    <br>
 <script type="text/javascript">
     function api_call() {
-        input = document.getElementById('output')
-        console.log("starting call")
-        var formData = new FormData($('form')[0])
+        console.log("starting call");
+        //var formData = new FormData($('form')[0])
+        url = '/api?output=' + $('#output').attr('src')
+        console.log(url)
+        $.get('/api?output=' + $('#output').attr('src')).done(function(response) {
+            console.log('response');
+        });
+        /*
         $.ajax({
-            url: 'https://whichstitch.herokuapp.com/api',
+            url: '/api',
             method: 'POST',
             contentType: false,
             processData: false,
@@ -37,6 +34,9 @@
             },
             timeout: 120000
         });
+        */
+
+        return false;
     }
     function ResizeImage() {
         var filesToUpload = document.getElementById('imageFile').files;
@@ -77,6 +77,7 @@
             var dataurl = canvas.toDataURL("image/jpg");
             outputimg = document.getElementById('output');
             outputimg.src = dataurl;
+            console.log(outputimg);
 
         }
         // Load files into file reader
@@ -87,4 +88,13 @@
 <script type="text/javascript">
 
 </script>
+</head>
+
+        <input id="imageFile" type="file"><input type="button" value="Resize Image" onclick="ResizeImage()"/>
+
+        <img src="" id="output" name="output">
+        <button id="predictbtn" onclick="api_call()">Predict</button>
+
+
+    <br>
 </html>

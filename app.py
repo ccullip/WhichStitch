@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify, render_template, json
 from flask_cors import CORS
 from serve import get_model_api
+from flask.json import jsonify
 
 app = Flask(__name__)
 CORS(app) # needed for cross-domain requests, allow everything by default
@@ -26,16 +27,23 @@ def server_error(e):
     """.format(e), 500
 
 # API route
-@app.route('/api', methods=['POST'])
+@app.route('/api')
 def api():
+    #print(request)
+    args = request.args.to_dict()
+    #print(args['output'])
     try:
-        input_data = request.files['output'];
+        input_data = args['output']
+        print("data:")
         output_data = model_api(input_data)
+        #print(output_data)
         #response = jsonify(output_data)
-        return json.dumps({'status':'OK?'})
+        print('success')
+        return jsonify({'status':'OK?'})
     except Exception as e:
-        str = repr(e)
-        return json.dumps({'status':'OK!', 'exception': str})
+        #str = repr(e)
+        #print(str)
+        return json.dumps({'status':'OK!'})
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port='5000', debug=True)
+    app.run(host='localhost', port='5000', debug=True)
