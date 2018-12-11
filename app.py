@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template, json
+from flask import Flask, request, jsonify, render_template, json, redirect, url_for
 from flask_cors import CORS
 from serve import get_model_api
 from flask.json import jsonify
@@ -26,24 +26,29 @@ def server_error(e):
     See logs for full stacktrace.
     """.format(e), 500
 
+@app.route('/output')
+def output():
+    print('redirected')
+    return render_template('output.html')
+
+@app.route('/error')
+def error():
+    print('redirected error')
+    return render_template('output.html')
+
 # API route
 @app.route('/api')
 def api():
-    #print(request)
     args = request.args.to_dict()
-    #print(args['output'])
     try:
         input_data = args['output']
-        print("data:")
         output_data = model_api(input_data)
-        #print(output_data)
-        #response = jsonify(output_data)
         print('success')
-        return render_template('output.html')  # json.dumps({'status':'OK?'})
+        return output_data
     except Exception as e:
-        #str = repr(e)
-        #print(str)
-        return render_template('output.html')# json.dumps({'status':'OK!'})
+        return ('error')
+
+
 
 if __name__ == '__main__':
     app.run(host='localhost', port='5000', debug=True)

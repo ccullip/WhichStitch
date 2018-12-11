@@ -12,7 +12,7 @@
         url = '/api?output=' + $('#output').attr('src')
         console.log(url)
         $.get('/api?output=' + $('#output').attr('src')).done(function(response) {
-            console.log('response');
+            window.location = "/output?id="+response;
         });
         /*
         $.ajax({

@@ -128,8 +128,11 @@ def EntireModel(model_filename, img):
     print(img)
     print("predicting")
     preds = model.predict(img)
-    print(preds)
-    return preds
+    index = np.argmax(preds)
+    print(index)
+    pred = classes[index]
+    print(pred)
+    return pred
 
 
 
