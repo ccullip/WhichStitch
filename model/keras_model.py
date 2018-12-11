@@ -123,6 +123,9 @@ def KerasModels(params, weights_filename, image):
 def EntireModel(model_filename, img):
     print("creating model")
     model = load_model(model_filename)
+    print("scaling img")
+    img = normalize(img)
+    print(img)
     print("predicting")
     preds = model.predict(img)
     print(preds)

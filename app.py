@@ -39,11 +39,11 @@ def api():
         #print(output_data)
         #response = jsonify(output_data)
         print('success')
-        return jsonify({'status':'OK?'})
+        return render_template('output.html')  # json.dumps({'status':'OK?'})
     except Exception as e:
         #str = repr(e)
         #print(str)
-        return json.dumps({'status':'OK!'})
+        return render_template('output.html')# json.dumps({'status':'OK!'})
 
 if __name__ == '__main__':
     app.run(host='localhost', port='5000', debug=True)
