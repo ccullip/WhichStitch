@@ -4,52 +4,32 @@
     <meta charset="UTF-8">
     <title>Which Stitch?</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        body {background-color: powderblue;}
+        p    {font-family: Garamond; text-align: center;}
+    </style>
 
 <script type="text/javascript">
     function api_call() {
         console.log("starting call");
-        //var formData = new FormData($('form')[0])
-        // url = '/api?output=' + $('#output').attr('src')
         imageData = $('#output').attr('src')
-        console.log(imageData)
-        /*$.get('/api?output=' + $('#output').attr('src')).done(function(response) {
-            window.location = "/output?id="+response;
-        });*/
-        jsonImage = JSON.stringify(imageData);
         $.ajax({
             url:'/api',
             method: 'POST',
             cache: false,
             processData: false,
             contentType: 'application/json',
-            dataType: 'text',
+            dataType: 'json',
             success: function(response){
-                window.location = "/output?id="+response;
+                console.log(response);
+                pred1 = response['pred1']
+                console.log(pred1)
+                pred2 = response['pred2']
+                console.log(pred2)
+                window.location = "/output?id="+pred1+"&next="+pred2;
             },
             data: JSON.stringify({image: imageData})
         });
-        /*
-        $.ajax({
-            url: '/api',
-            method: 'POST',
-            contentType: false,
-            processData: false,
-            data: formData, // new FormData($('form')[0]),
-            dataType: 'json',
-            cache: false,
-            async: false,
-            success: function( response ){
-                console.log(response);
-                console.log("success!");
-            },
-            error: function( error ){
-                // $('#api_output').html( "There was an error" );
-                console.log( error );
-            },
-            timeout: 120000
-        });
-        */
-
         return false;
     }
     function ResizeImage() {
@@ -92,7 +72,9 @@
             var dataurl = canvas.toDataURL("image/jpg");
             outputimg = document.getElementById('output');
             outputimg.src = dataurl;
+            outputimg.style.borderStyle = "double";
             console.log(outputimg);
+            document.getElementById("predictbtn").style.visibility = "visible";
 
         }
         // Load files into file reader
@@ -104,11 +86,21 @@
 
 </script>
 </head>
-
-        <input id="imageFile" type="file"><input type="button" value="Resize Image" onclick="ResizeImage()"/>
-
-        <img src="" id="output" name="output">
-        <button id="predictbtn" onclick="api_call()">Predict</button>
+        <p style="font-size:60px;padding:0px;margin:0px;font-family:Garamond;">WhichStitch?</p>
+        <p style="font-size:20px;margin:0px;font-style:italic;">A neural network that classifies knitted stitches</p>
+        <p style="margin-bottom:0"><strong>Directions:</strong> Upload an image from your computer or take an image with your phone.
+            <br/>Then, click on "Predict" and wait a few moments for the prediction to appear.</p>
+        <div style="text-align:center;padding:30px">
+            <div style="text-align:center">
+                <label onchange="ResizeImage();ResizeImage();" style="height:50px;border-radius:5px;background-color:white;padding: 16px 20px 16px 20px;box-shadow:3px 3px;font-size:13px;font-family:Verdana;font-weight:bold">Choose Image
+                <input style="display:none" id="imageFile" type="file">
+                </label>
+            </div>
+            <br/>
+            <img style="margin:30px;border-style:none;border-width:5px" src="" id="output" name="output">
+            <br/>
+            <button style="visibility:hidden;height:50px;border:none;border-radius:5px;margin-right:4px;background-color:white;box-shadow:3px 3px;padding: 0 20px 0 20px;font-family:Verdana;font-weight:bold;font-size:20px" id="predictbtn" onclick="api_call()">Predict</button>
+        </div>
 
 
     <br>

@@ -130,9 +130,12 @@ def EntireModel(model_filename, img):
     preds = model.predict(img)
     index = np.argmax(preds)
     print(index)
+    preds2 = np.delete(preds, index)
+    index2 = np.argmax(preds2)
     pred = classes[index]
+    pred2 = classes[index2]
     print(pred)
-    return pred
+    return pred, pred2
 
 
 

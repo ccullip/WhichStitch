@@ -43,14 +43,8 @@ def api():
     if request.method == 'POST':
         request_data = request.get_json()
         input_data = request_data['image']
-        #input_data = args['output']
-        #print(input_data)
-        output_data = model_api(input_data)
-        #print('success')
-        return output_data
-        #except Exception as e:
-        #    return ('error')
-
+        pred1, pred2 = model_api(input_data)
+        return jsonify({'pred1': pred1, 'pred2': pred2})
 
 
 if __name__ == '__main__':

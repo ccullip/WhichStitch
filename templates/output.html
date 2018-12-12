@@ -3,10 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Prediction</title>
+    <style>
+        body {background-color: powderblue;}
+        p    {font-family: Garamond; text-align: center;}
+    </style>
 </head>
 <body>
-    <p>The predicted stitch is </p><p id="stitch"></p>
-    <img src="" id="stitchImg"/>
+    <p style="font-size:60px;padding:0px;margin:0px;font-family:Garamond;">WhichStitch?</p>
+    <p style="font-size:20px;margin:0px;font-style:italic;">A neural network that classifies knitted stitches</p>
+    <br/>
+    <p style="font-size:25px;margin-bottom:10px">The predicted stitch is </p><p id="stitch" style="text-align:center;font-size:30px;font-weight:bold;margin-top:10px"></p>
+    <div style="text-align:center"><img style="border-style:double;border-width:8px" src="" id="stitchImg"/></div>
+    <div style="text-align:center;">
+        <p style="font-weight:bold;font-size:20px">To create this stitch:</p>
+        <p id="instructions"></p>
+    </div>
+    <div style="text-align:center"><a href="" id="nextpred"/></div>
     <script type="text/javascript">
     function getQueryVariable(variable){
        var query = window.location.search.substring(1);
@@ -19,8 +31,32 @@
     }
         prediction = getQueryVariable("id");
         document.getElementById('stitch').innerHTML = prediction;
-        document.getElementById('stitchImg').src = prediction + ".jpg"
-        //$("#stitchImg").attr("src", prediction + ".jpg");
+        prediction2 = getQueryVariable("next");
+        if (prediction2 != false){
+            document.getElementById('nextpred').innerHTML = "Is this prediction incorrect? The model's next guess was " + prediction2;
+            document.getElementById('nextpred').href = "/output?id="+prediction2
+        }
+        switch (prediction){
+        case 'garter':
+            imageLink = "https://i.imgur.com/Qdeqc79.jpg";
+            instructions = "(RS) Knit across row <br/> (WS) Knit across row";
+            break;
+        case 'stockinette':
+            imageLink = "https://imgur.com/7CyDrxh.jpg";
+            instructions = "(RS) Knit across row <br/> (WS) Purl across row";
+            break;
+        case 'seed':
+            imageLink = "";
+            break;
+        case 'slipstitchhoneycomb':
+            imageLink = "";
+            break;
+        case 'star':
+            imageLink = "";
+        }
+        document.getElementById('stitchImg').src = imageLink;
+        document.getElementById('instructions').innerHTML = instructions;
+        // $("#stitchImg").attr("src", prediction + ".jpg");
     </script>
 </body>
 </html>
