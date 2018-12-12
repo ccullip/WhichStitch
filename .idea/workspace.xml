@@ -19,9 +19,6 @@
       <change beforePath="$PROJECT_DIR$/../Graph Theory/Graph Theory.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../Graph Theory/Graph Theory.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Iris-Classification-with-Heroku" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../WhichStitch" beforeDir="false" afterPath="$PROJECT_DIR$/../WhichStitch" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/greyscale.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/greyscale.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/keras_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/keras_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serve.py" beforeDir="false" afterPath="$PROJECT_DIR$/serve.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/simple_client.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/simple_client.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../app" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../iPhone pictures/IMG_0432.JPG" beforeDir="false" />
@@ -1629,14 +1626,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="59" />
-          <entry key="html" value="10690" />
+          <entry key="html" value="10709" />
           <entry key="py" value="6211" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="59" />
-          <entry key="HTML" value="10690" />
+          <entry key="HTML" value="10709" />
           <entry key="Python" value="6211" />
         </counts>
       </usages-collector>
@@ -1688,7 +1685,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/serve.py">
           <provider selected="true" editor-type-id="text-editor">
             <state>
@@ -1697,11 +1694,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/simple_client.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="69" selection-start-line="69" selection-end-line="69" />
+            <state relative-caret-position="408">
+              <caret line="97" column="87" selection-start-line="97" selection-start-column="87" selection-end-line="97" selection-end-column="87" />
               <folding>
                 <element signature="n#style#0;n#p#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#1;n#html#0;n#!!top" expanded="true" />
@@ -1746,9 +1743,9 @@
         <option value="$PROJECT_DIR$/stylesheet.css" />
         <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/templates/output.html" />
-        <option value="$PROJECT_DIR$/templates/simple_client.html" />
         <option value="$PROJECT_DIR$/model/keras_model.py" />
         <option value="$PROJECT_DIR$/serve.py" />
+        <option value="$PROJECT_DIR$/templates/simple_client.html" />
       </list>
     </option>
   </component>
@@ -1982,24 +1979,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/simple_client.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="69" selection-start-line="69" selection-end-line="69" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#2;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/keras_model.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
@@ -2007,6 +1986,13 @@
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/serve.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="30" selection-start-column="30" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -2020,10 +2006,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/serve.py">
+    <entry file="file://$PROJECT_DIR$/templates/simple_client.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="30" selection-start-column="30" selection-end-column="30" />
+        <state relative-caret-position="408">
+          <caret line="97" column="87" selection-start-line="97" selection-start-column="87" selection-end-line="97" selection-end-column="87" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#2;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
