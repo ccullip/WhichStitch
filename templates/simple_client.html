@@ -9,10 +9,24 @@
     function api_call() {
         console.log("starting call");
         //var formData = new FormData($('form')[0])
-        url = '/api?output=' + $('#output').attr('src')
-        console.log(url)
-        $.get('/api?output=' + $('#output').attr('src')).done(function(response) {
+        // url = '/api?output=' + $('#output').attr('src')
+        imageData = $('#output').attr('src')
+        console.log(imageData)
+        /*$.get('/api?output=' + $('#output').attr('src')).done(function(response) {
             window.location = "/output?id="+response;
+        });*/
+        jsonImage = JSON.stringify(imageData);
+        $.ajax({
+            url:'/api',
+            method: 'POST',
+            cache: false,
+            processData: false,
+            contentType: 'application/json',
+            dataType: 'text',
+            success: function(response){
+                window.location = "/output?id="+response;
+            },
+            data: JSON.stringify({image: imageData})
         });
         /*
         $.ajax({

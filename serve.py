@@ -13,14 +13,15 @@ def get_model_api():
     def model_api(input_string):
         comma = input_string.find(',')
         input_data = input_string[comma + 1:]
-        new_string = ""
-        for i in range(len(input_data)):
-            if input_data[i] == ' ':
-                new_string += '+'
-            else:
-                new_string += input_data[i]
+        print(input_data)
+        #new_string = ""
+        #for i in range(len(input_data)):
+        #    if input_data[i] == ' ':
+        #        new_string += '+'
+        #    else:
+        #        new_string += input_data[i]
         #print(new_string)
-        decoded_string = base64.b64decode(new_string)
+        decoded_string = base64.b64decode(input_data)
         input_img = Image.open(BytesIO(decoded_string))
         print(input_img.size)
 

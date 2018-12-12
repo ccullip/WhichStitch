@@ -37,16 +37,23 @@ def error():
     return render_template('output.html')
 
 # API route
-@app.route('/api')
+@app.route('/api', methods=['POST'])
 def api():
     args = request.args.to_dict()
-    try:
-        input_data = args['output']
-        output_data = model_api(input_data)
-        print('success')
-        return output_data
-    except Exception as e:
-        return ('error')
+    if request.method == 'POST':
+        print("post method")
+        print(request.get_json())
+        try:
+            print('trying')
+            request_data = request.get_json()
+            input_data = request_data['image']
+            #input_data = args['output']
+            print(input_data)
+            output_data = model_api(input_data)
+            print('success')
+            return output_data
+        except Exception as e:
+            return ('error')
 
 
 
