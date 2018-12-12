@@ -43,9 +43,9 @@ def get_model_api():
         print(img.shape)
 
         # 3. call model predict function
-        pred = EntireModel("model/12_11_2018-model.h5", img)
+        pred1, pred2 = EntireModel("model/12_11_2018-model.h5", img)
 
         # 5. return the output for the api
-        return pred
+        return pred1, pred2
 
     return model_api
