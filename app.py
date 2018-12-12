@@ -41,19 +41,15 @@ def error():
 def api():
     args = request.args.to_dict()
     if request.method == 'POST':
-        print("post method")
-        print(request.get_json())
-        try:
-            print('trying')
-            request_data = request.get_json()
-            input_data = request_data['image']
-            #input_data = args['output']
-            print(input_data)
-            output_data = model_api(input_data)
-            print('success')
-            return output_data
-        except Exception as e:
-            return ('error')
+        request_data = request.get_json()
+        input_data = request_data['image']
+        #input_data = args['output']
+        #print(input_data)
+        output_data = model_api(input_data)
+        #print('success')
+        return output_data
+        #except Exception as e:
+        #    return ('error')
 
 
 
