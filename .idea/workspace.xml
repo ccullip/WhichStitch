@@ -1626,14 +1626,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="59" />
-          <entry key="html" value="10717" />
+          <entry key="html" value="10720" />
           <entry key="py" value="6211" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="59" />
-          <entry key="HTML" value="10717" />
+          <entry key="HTML" value="10720" />
           <entry key="Python" value="6211" />
         </counts>
       </usages-collector>
@@ -1698,7 +1698,7 @@
         <entry file="file://$PROJECT_DIR$/templates/simple_client.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="408">
-              <caret line="97" column="86" selection-start-line="97" selection-start-column="86" selection-end-line="97" selection-end-column="86" />
+              <caret line="97" column="89" selection-start-line="97" selection-start-column="89" selection-end-line="97" selection-end-column="89" />
               <folding>
                 <element signature="n#style#0;n#p#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#1;n#html#0;n#!!top" expanded="true" />
@@ -2009,7 +2009,7 @@
     <entry file="file://$PROJECT_DIR$/templates/simple_client.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
-          <caret line="97" column="86" selection-start-line="97" selection-start-column="86" selection-end-line="97" selection-end-column="86" />
+          <caret line="97" column="89" selection-start-line="97" selection-start-column="89" selection-end-line="97" selection-end-column="89" />
           <folding>
             <element signature="n#style#0;n#p#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#1;n#html#0;n#!!top" expanded="true" />
