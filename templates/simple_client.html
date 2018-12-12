@@ -52,6 +52,7 @@
             var MAX_HEIGHT = 100;
             var width = img.width;
             var height = img.height;
+            var resize = width;
 
             // resize smallest dimension to 100 px, other dim is >= 100
             if (width < height) {
@@ -60,14 +61,15 @@
                     width = MAX_WIDTH;
                 }
             } else { // if height < width
+                resize = height;
                 if (height > MAX_HEIGHT) {
                     width *= MAX_HEIGHT / height;
                     height = MAX_HEIGHT;
                 }
             }
-            canvas.width = width;
-            canvas.height = height;
-            ctx.drawImage(img, 0, 0, width, height);
+            canvas.width = MAX_WIDTH;
+            canvas.height = MAX_HEIGHT;
+            ctx.drawImage(img, 0, 0, resize, resize, 0, 0, MAX_WIDTH, MAX_HEIGHT);
 
             var dataurl = canvas.toDataURL("image/jpg");
             outputimg = document.getElementById('output');
