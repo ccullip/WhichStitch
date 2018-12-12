@@ -4,5 +4,5 @@ scipy
 flask
 gunicorn
 flask_cors
-keras==2.2.0
+keras==2.2.4
 Pillow-PIL
