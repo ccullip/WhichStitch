@@ -30,4 +30,4 @@ The overall goal is to make this application mobile-friendly so smartphone users
 ### Demo
 Alright! I know you all are itching to try this out. So grab your phone and your favorite knitted sweater and [give it a try!](whichstitch.herokuapp.com) Or just check out the demo below:
 
-<p align="center"><img src="demo.gif" alt="Demo GIF"/></p>
+<p align="center"><img src="democrop.gif" alt="Demo GIF"/></p>
