@@ -1,0 +1,18 @@
+body {
+    background-color: powderblue;
+}
+p {
+    font-family: Garamond; text-align: center;
+}
+title {
+    font-size:60px;
+    padding:0px;
+    margin:0px;
+    font-family:Garamond;
+}
+
+subtitle {
+    font-size:20px;
+    margin:0px;
+    font-style:italic;
+}
