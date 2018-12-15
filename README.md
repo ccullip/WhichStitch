@@ -28,6 +28,6 @@ Although there are hundreds of stitches available and this model only focuses of
 The overall goal is to make this application mobile-friendly so smartphone users can take a picture of a stitch and receive a prediction in real-time. Optimizing a website for mobile viewing, however, is slightly more difficult than I had previously expected. (Along with, at the time of writing this, there seems to be a bug where the mobile version classifies every stitch as seed stitch...) Nevertheless, the main idea is implemented in the functioning desktop version.  
 
 ### Demo
-Alright! I know you all are itching to try this out. So grab your phone and your favorite knitted sweater and [give it a try!](whichstitch.herokuapp.com) Or just check out the demo below:
+Alright! I know you all are itching to try this out. So grab your phone and your favorite knitted sweater and [give it a try!](http://whichstitch.herokuapp.com) Or just check out the demo below:
 
-<p align="center"><img src="demo.gif" alt="Demo GIF"/></p>
+<p align="center"><img src="democrop.gif" alt="Demo GIF"/></p>
